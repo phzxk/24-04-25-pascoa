@@ -11,11 +11,11 @@ app.use(express.json());
 app.use(express.static('.'));
 
 const pool = mysql.createPool({
-    host: 'sql.freedb.tech',
-    port: '3306',
-    user: 'freedb_pedro',
-    password: 'v2uEv*Pc3#vK7aM',
-    database: 'freedb_myql_pedro'
+    host: 'mysql-3d1f4d97-phsilvamartins590-643b.j.aivencloud.com',
+    port: '25127',
+    user: 'avnadmin',
+    password: 'AVNS_7gXTgilDt5Pm0Czpcjq',
+    database: 'defaultdb'
 });
 
 
