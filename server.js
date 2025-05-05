@@ -25,7 +25,7 @@ app.post('/api/mysql', async (req, res) => {
         switch (tipo) {
             case 'cadastro':
                 var [rows, fields] = await pool.query(
-                    "insert into `defaultdb`.`tbl_login` (`nome`, `login`, `senha`) values (?, ?, ?);",
+                    "insert into `defaultdb`.`tbl_login` (`nome`, `email`, `senha`) values (?, ?, ?);",
                     [nome, login, senha]
                 );
                 if (rows.affectedRows > 0) {
@@ -37,7 +37,7 @@ app.post('/api/mysql', async (req, res) => {
                 case 'login':
                     try {
                         var [rows, fields] = await pool.query(
-                            "select * from `defaultdb`.`tbl_login` where `nome` = ? and `login` = ? and `senha` = ?;",
+                            "select * from `defaultdb`.`tbl_login` where `nome` = ? and `email` = ? and `senha` = ?;",
                             [nome, login, senha]
                         );
                         if (rows.length >= 1) {
