@@ -910,10 +910,10 @@
       document.getElementById('loginForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const  = document.getElementById('txtLogin').value;
+        const login = document.getElementById('txtLogin').value;
         const password = document.getElementById('txtLoginSenha').value;
         
-        if( && password) {
+        if(login && password) {
           // Simulação de login bem-sucedido
           alert('Login realizado com sucesso! Bem-vindo de volta à Cheirinho de Bolo!');
           var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
@@ -929,12 +929,12 @@
         
         const nome = document.getElementById('txtNome').value;
         const telefone = document.getElementById('txtTelefone').value;
-        const  = document.getElementById('txt').value;
+        const login = document.getElementById('txt').value;
         const senha = document.getElementById('txtSenha').value;
         const confirmarSenha = document.getElementById('txtConfirmarSenha').value;
         const acceptTerms = document.getElementById('acceptTerms').checked;
         
-        if(!nome || !telefone || ! || !senha || !confirmarSenha) {
+        if(!nome || !telefone || !login || !senha || !confirmarSenha) {
           alert('Por favor, preencha todos os campos!');
           return;
         }
@@ -957,7 +957,7 @@
         document.getElementById('loginFormContainer').style.display = 'block';
         
         // Preenche automaticamente o  no formulário de login
-        document.getElementById('txtLogin').value = ;
+        document.getElementById('txtLogin').value = login;
         document.getElementById('txtLoginSenha').focus();
       });
     });
