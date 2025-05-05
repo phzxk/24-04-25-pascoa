@@ -25,7 +25,7 @@ app.post('/api/mysql', async (req, res) => {
         switch (tipo) {
             case 'cadastro':
                 var [rows, fields] = await pool.query(
-                    "insert into `freedb_myql_pedro`.`tbl_login` (`nome`, `login`, `senha`) values (?, ?, ?);",
+                    "insert into `defaultdb`.`tbl_login` (`nome`, `login`, `senha`) values (?, ?, ?);",
                     [nome, login, senha]
                 );
                 if (rows.affectedRows > 0) {
@@ -37,7 +37,7 @@ app.post('/api/mysql', async (req, res) => {
                 case 'login':
                     try {
                         var [rows, fields] = await pool.query(
-                            "select * from `freedb_myql_pedro`.`tbl_login` where `nome` = ? and `login` = ? and `senha` = ?;",
+                            "select * from `defaultdb`.`tbl_login` where `nome` = ? and `login` = ? and `senha` = ?;",
                             [nome, login, senha]
                         );
                         if (rows.length >= 1) {
@@ -71,7 +71,7 @@ app.post('/api/mysql', async (req, res) => {
                     addAnd = " and ";
                 }
 
-                var strSql = "select * from `freedb_myql_pedro`.`tbl_login` where" + 
+                var strSql = "select * from `defaultdb`.`tbl_login` where" + 
                     addNome + addAnd + addLogin + ";";
                 var [rows, fields] = await pool.query(strSql);
                 if (rows.length > 0) {
@@ -87,7 +87,7 @@ app.post('/api/mysql', async (req, res) => {
                 }
                 break;
                 case 'atualizacao':
-                    var strSql = "select * from `freedb_myql_pedro`.`tbl_login`;";
+                    var strSql = "select * from `defaultdb`.`tbl_login`;";
                     var [rows, fields] = await pool.query(strSql);
                     if (rows.length > 0) {
                         res.json({ 
@@ -129,7 +129,7 @@ app.post('/api/mysql', async (req, res) => {
                         addSenha = " , " + addSenha;
                     }
     
-                    var strSql = "update `freedb_myql_pedro`.`tbl_login` set " + 
+                    var strSql = "update `defaultdb`.`tbl_login` set " + 
                         addNome + addLogin + addSenha + 
                         " where `id` = " + addId + ";";
                     var [rows, fields] = await pool.query(strSql);
