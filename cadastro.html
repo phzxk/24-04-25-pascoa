@@ -372,7 +372,7 @@
           </div>
           <div class="input-group">
             <i class="bi bi-envelope"></i>
-            <input type="email" class="form-control" id="txtEmail" placeholder="Seu melhor e-mail" required />
+            <input type="login" class="form-control" id="txtLogin" placeholder="Seu melhor e-mail" required />
           </div>
           <div class="input-group">
             <i class="bi bi-lock"></i>
@@ -422,10 +422,10 @@
       e.preventDefault();
       
       const nome = document.getElementById('txtNome').value;
-      const email = document.getElementById('txtEmail').value;
+      const login = document.getElementById('txtLogin').value;
       const senha = document.getElementById('txtSenha').value;
       
-      if(nome && email && senha) {
+      if(nome && login && senha) {
         const mainButton = document.getElementById('mainButton');
         mainButton.innerHTML = '<i class="bi bi-check-circle"></i> Cadastro Concluído!';
         mainButton.style.background = 'linear-gradient(to right, #4CAF50, #81C784)';

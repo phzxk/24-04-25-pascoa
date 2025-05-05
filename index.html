@@ -548,8 +548,8 @@
             </div>
             <form id="loginForm">
               <div class="mb-3">
-                <label for="txtLoginEmail" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="txtLoginEmail" placeholder="seu@email.com" required>
+                <label for="txtLoginLogin" class="form-label">E-mail</label>
+                <input type="login" class="form-control" id="txtLoginLogin" placeholder="seu@.com" required>
               </div>
               <div class="mb-3">
                 <label for="txtLoginSenha" class="form-label">Senha</label>
@@ -587,8 +587,8 @@
                 </div>
               </div>
               <div class="mb-3">
-                <label for="txtEmail" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="txtEmail" placeholder="seu@email.com" required>
+                <label for="txtLogin" class="form-label">E-mail</label>
+                <input type="login" class="form-control" id="txtLogin" placeholder="seu@.com" required>
               </div>
               <div class="row">
                 <div class="col-md-6 mb-3">
@@ -910,10 +910,10 @@
       document.getElementById('loginForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const email = document.getElementById('txtLoginEmail').value;
+        const  = document.getElementById('txtLogin').value;
         const password = document.getElementById('txtLoginSenha').value;
         
-        if(email && password) {
+        if( && password) {
           // Simulação de login bem-sucedido
           alert('Login realizado com sucesso! Bem-vindo de volta à Cheirinho de Bolo!');
           var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
@@ -929,12 +929,12 @@
         
         const nome = document.getElementById('txtNome').value;
         const telefone = document.getElementById('txtTelefone').value;
-        const email = document.getElementById('txtEmail').value;
+        const  = document.getElementById('txt').value;
         const senha = document.getElementById('txtSenha').value;
         const confirmarSenha = document.getElementById('txtConfirmarSenha').value;
         const acceptTerms = document.getElementById('acceptTerms').checked;
         
-        if(!nome || !telefone || !email || !senha || !confirmarSenha) {
+        if(!nome || !telefone || ! || !senha || !confirmarSenha) {
           alert('Por favor, preencha todos os campos!');
           return;
         }
@@ -956,8 +956,8 @@
         document.getElementById('registerFormContainer').style.display = 'none';
         document.getElementById('loginFormContainer').style.display = 'block';
         
-        // Preenche automaticamente o email no formulário de login
-        document.getElementById('txtLoginEmail').value = email;
+        // Preenche automaticamente o  no formulário de login
+        document.getElementById('txtLogin').value = ;
         document.getElementById('txtLoginSenha').focus();
       });
     });
